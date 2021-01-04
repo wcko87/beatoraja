@@ -183,9 +183,16 @@ public class KeyBoardInputProcesseor extends BMSPlayerInputDevice implements Inp
 		return false;
 	}
 
+	// libgdx 1.9.11以下のAPI
 	public boolean scrolled(int amount) {
 		this.bmsPlayerInputProcessor.scroll -= amount;
 		return false;
+	}
+
+	// libgdx 1.9.12以上のAPI
+	public boolean scrolled(float amountX, float amountY) {
+	    this.bmsPlayerInputProcessor.scroll -= amountY;
+	    return false;
 	}
 
 	public boolean touchDown(int x, int y, int point, int button) {
